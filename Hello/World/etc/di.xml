@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+<preference for="Hello\World\Api\Data\PostInterface" type="Hello\World\Model\Post"/>
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+      <argument name="collections" xsi:type="array">
+        <item name="hw_record_listing_data_source" xsi:type="string">Hello\World\Model\ResourceModel\Post\Grid\Collection</item>
+      </argument>
+    </arguments>
+ </type>
+ <virtualType name="Hello\World\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+  <arguments>
+    <argument name="mainTable" xsi:type="string">hw_record</argument>
+    <argument name="resourceModel" xsi:type="string">Hello\World\Model\ResourceModel\Post</argument>
+  </arguments>
+ </virtualType>
+</config>
